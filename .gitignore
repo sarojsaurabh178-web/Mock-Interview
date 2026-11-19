@@ -1,0 +1,104 @@
+# =====================================================================
+# Mock-Interview Root .gitignore (FastAPI Backend + React Frontend)
+# =====================================================================
+
+# Environment variables & secrets (CRITICAL)
+.env
+.env.*
+!.env.example
+*.env
+Backend/.env
+Frontend/.env
+
+# Python / Backend
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+Backend/venv/
+Backend/.venv/
+
+# Python Testing & Type Checking
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.pytype/
+.ruff_cache/
+
+# Node.js & Frontend dependencies / build
+node_modules/
+Frontend/node_modules/
+Frontend/dist/
+Frontend/dist-ssr/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-store/
+
+# Application Logs & Intermediates
+logs/
+*.log
+Backend/logs/
+Backend/logs/*.log
+*.tmp
+*.temp
+
+# Generated / Recorded Test Audio & Media files
+*.mp3
+*.wav
+*.webm
+*.ogg
+*.m4a
+hello.mp3
+test_*.webm
+candidate_voice.*
+
+# Databases & Local Storage
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# IDEs, Editors & OS Files
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini

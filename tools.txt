@@ -1,0 +1,116 @@
+1. Candidate & document analysis
+These tools understand the candidate's resume and the job description before the interview.
+Tool name	Responsibility
+parse_resume	Extract structured information from PDF/DOCX
+analyze_resume	Analyze skills, experience, education and projects
+extract_candidate_skills	Extract technical and soft skills
+extract_candidate_experience	Extract work experience and internships
+extract_candidate_projects	Extract project details and technologies
+extract_candidate_achievements	Extract certifications and achievements
+analyze_job_description	Extract role requirements from JD
+extract_required_skills	Identify mandatory and preferred skills
+match_resume_with_jd	Compare resume against the JD
+identify_skill_gaps	Identify missing or weakly evidenced skills
+generate_candidate_profile	Build a structured candidate profile
+
+2. Interview planning tools
+These tools prepare the interview structure.
+Tool name	Responsibility
+generate_interview_plan	Create the complete interview plan
+define_interview_rounds	Define technical, behavioral and project rounds
+allocate_question_distribution	Distribute questions by topic
+set_interview_difficulty	Set difficulty based on role and experience
+generate_question_bank	Generate questions for the interview
+select_interview_topics	Select topics based on JD and resume
+estimate_interview_duration	Estimate interview duration
+
+3. Interview management tools
+These are responsible for controlling the interview.
+Tool name	Responsibility
+start_interview	Start an interview session
+get_interview_state	Get current interview status
+get_current_question	Retrieve the current question
+generate_next_question	Generate the next question
+repeat_question	Repeat the current question
+skip_question	Skip a question
+pause_interview	Pause the session
+resume_interview	Resume the session
+change_interview_topic	Switch interview topics
+update_interview_progress	Update completed questions and rounds
+get_interview_history	Retrieve previous questions and answers
+end_interview	End the interview session
+
+4. Answer evaluation tools
+These tools evaluate candidate responses.
+Tool name	Responsibility
+evaluate_candidate_answer	Evaluate an answer against a rubric
+evaluate_technical_answer	Evaluate technical correctness
+evaluate_behavioral_answer	Evaluate behavioral responses
+evaluate_project_explanation	Evaluate project understanding
+check_answer_relevance	Check relevance to the question
+check_answer_completeness	Identify missing concepts
+identify_unsupported_claims	Flag claims that need clarification
+generate_followup_question	Generate a relevant follow-up
+generate_clarification_question	Ask for clarification
+detect_knowledge_gaps	Identify knowledge gaps
+adjust_question_difficulty	Adapt the next question's difficulty
+check_interview_coverage	Check which required topics were covered
+
+5. Speech analysis tools
+These tools analyze the candidate's audio and speaking patterns.
+Tool name	Responsibility
+transcribe_candidate_audio	Convert speech into text
+detect_speech_activity	Detect speech and silence
+analyze_speaking_pace	Calculate words per minute
+analyze_speech_pauses	Measure pauses and hesitation intervals
+detect_filler_words	Count words such as um, uh and actually
+analyze_audio_quality	Detect noise and poor audio quality
+analyze_answer_clarity	Assess answer structure and clarity
+generate_speech_summary	Generate speech analytics summary
+synthesize_interviewer_speech	Convert interviewer text into speech
+
+6. Video presentation analysis tools
+This is the video analyzer module you want to build.
+
+One important distinction: don't claim to measure someone's actual confidence, honesty, or personality from facial expressions, eye contact or posture. These are unreliable signals. Build presentation-quality feedback instead.
+Tool name	Responsibility
+analyze_face_visibility	Check whether the face is visible
+analyze_camera_framing	Check camera positioning and framing
+analyze_lighting_quality	Detect poor lighting
+analyze_video_quality	Check blur, resolution and frame quality
+analyze_head_pose	Estimate head orientation
+analyze_posture	Analyze observable posture and positioning
+detect_person_in_frame	Check whether the candidate is in frame
+detect_multiple_persons	Identify multiple people in the frame
+analyze_background	Identify visual distractions
+generate_video_presentation_feedback	Generate actionable presentation tips
+
+Keep these as coaching metrics, not candidate-selection scores. Obtain consent and provide an option to disable video analysis.
+7. Technical assessment tools
+Useful for developer interviews and coding rounds.
+Tool name	Responsibility
+generate_coding_problem	Generate coding questions
+evaluate_code_submission	Evaluate submitted code
+execute_code_safely	Execute code in an isolated sandbox
+run_test_cases	Run test cases
+analyze_time_complexity	Analyze time complexity
+analyze_space_complexity	Analyze space complexity
+generate_code_hints	Provide hints
+evaluate_system_design	Evaluate system design answers
+evaluate_database_knowledge	Evaluate database concepts
+evaluate_api_design	Evaluate API design knowledge
+evaluate_debugging_ability	Evaluate debugging approach
+
+Never execute candidate-submitted code directly inside your main FastAPI process. Use an isolated execution environment.
+8. Interview scoring and reporting tools
+These tools generate the final assessment.
+Tool name	Responsibility
+calculate_section_scores	Calculate scores for individual sections
+calculate_overall_score	Calculate overall assessment score
+generate_strengths	Identify demonstrated strengths
+generate_improvement_areas	Identify improvement areas
+generate_interview_summary	Summarize the interview
+generate_interview_report	Generate the final report
+get_interview_timeline	Retrieve interview events and timings
+generate_recommended_learning_path	Recommend topics to practice
+compare_answers_with_rubric	Compare answers against evaluation criteria

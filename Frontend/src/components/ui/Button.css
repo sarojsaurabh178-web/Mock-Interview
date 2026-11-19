@@ -1,0 +1,193 @@
+.styled-button-wrapper {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+/* Force override of any parent container button constraints (like .camera-controls button) */
+.styled-button-wrapper .button.styled-action-btn,
+.styled-button-wrapper .button {
+  --btn-purple: #7359ca;
+  --btn-purple-dark: #5e45b8;
+  --btn-purple-glow: #9e87ec;
+  --border_radius: 8px;
+  --transtion: 0.25s ease-in-out;
+  --offset: 2px;
+
+  cursor: pointer;
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+
+  transform-origin: center;
+
+  width: auto !important;
+  min-width: max-content !important;
+  height: 34px !important;
+  padding: 0 16px !important;
+  background-color: transparent !important;
+
+  border: none !important;
+  border-radius: var(--border_radius) !important;
+  transform: scale(calc(1 + (var(--active, 0) * 0.05)));
+
+  transition: transform var(--transtion), box-shadow var(--transtion);
+  white-space: nowrap !important;
+  box-sizing: border-box;
+}
+
+/* The purple brand background layer replacing the black background */
+.styled-button-wrapper .button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #7b62d3 0%, #6046be 100%);
+
+  border-radius: var(--border_radius);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.2),
+    0 4px 14px rgba(115, 89, 202, 0.45);
+
+  transition: all var(--transtion);
+  z-index: 0;
+}
+
+/* Hover glow overlay */
+.styled-button-wrapper .button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8d73e6 0%, #6c51cc 100%);
+  opacity: var(--active, 0);
+  border-radius: var(--border_radius);
+  transition: opacity var(--transtion);
+  z-index: 1;
+}
+
+.styled-button-wrapper .button:is(:hover, :focus-visible) {
+  --active: 1;
+  box-shadow: 0 6px 18px rgba(115, 89, 202, 0.55);
+}
+
+.styled-button-wrapper .button:active {
+  transform: scale(0.98);
+}
+
+/* The animated border glow */
+.styled-button-wrapper .button .dots_border {
+  --size_border: calc(100% + 2px);
+  overflow: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: var(--size_border);
+  height: var(--size_border);
+  background-color: transparent;
+
+  border-radius: var(--border_radius);
+  z-index: -1;
+}
+
+.styled-button-wrapper .button .dots_border::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: left;
+  transform: rotate(0deg);
+
+  width: 100%;
+  height: 2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+
+  mask: linear-gradient(transparent 0%, white 120%);
+  -webkit-mask: linear-gradient(transparent 0%, white 120%);
+  animation: rotate 2.5s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sparkle icon */
+.styled-button-wrapper .button .sparkle {
+  position: relative;
+  z-index: 10;
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+}
+
+.styled-button-wrapper .button .sparkle .path {
+  fill: #ffffff;
+  stroke: #ffffff;
+  transform-origin: center;
+  color: #ffffff;
+}
+
+.styled-button-wrapper .button:is(:hover, :focus) .sparkle .path {
+  animation: path 1.5s linear 0.5s infinite;
+}
+
+.styled-button-wrapper .button .sparkle .path:nth-child(1) {
+  --scale_path_1: 1.2;
+}
+
+.styled-button-wrapper .button .sparkle .path:nth-child(2) {
+  --scale_path_2: 1.2;
+}
+
+.styled-button-wrapper .button .sparkle .path:nth-child(3) {
+  --scale_path_3: 1.2;
+}
+
+@keyframes path {
+  0%,
+  34%,
+  71%,
+  100% {
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(var(--scale_path_1, 1));
+  }
+  49% {
+    transform: scale(var(--scale_path_2, 1));
+  }
+  83% {
+    transform: scale(var(--scale_path_3, 1));
+  }
+}
+
+/* Button text: crisp white with clear typography matching the UI */
+.styled-button-wrapper .button .text_button {
+  position: relative;
+  z-index: 10;
+
+  font-family: inherit;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+  white-space: nowrap;
+  line-height: 1;
+}
