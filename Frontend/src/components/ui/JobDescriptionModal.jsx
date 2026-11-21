@@ -365,24 +365,20 @@ export function JobDescriptionModal({
                   </button>
                   <span>Parsed locally for question matching.</span>
                   <div style={{ marginLeft: 'auto', display: 'flex', gap: '8px' }}>
-                    <button
-                      type="button"
-                      className="primary-button"
+                    <Button
                       onClick={isProcessing ? undefined : onStart}
                       disabled={isProcessing}
-                      style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+                      className={isProcessing ? 'button-processing' : ''}
                     >
                       {isProcessing ? (
                         <>
-                          <Orb state="searching" variant="lighthouse" size={16} />
-                          Matching & Calibrating...
+                          <Orb state="searching" variant="lighthouse" size={15} />
+                          <span>Matching & Calibrating...</span>
                         </>
                       ) : (
-                        <>
-                          Start Interview ↗
-                        </>
+                        'Start Interview ↗'
                       )}
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </div>
